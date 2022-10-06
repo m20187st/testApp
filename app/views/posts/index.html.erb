@@ -1,5 +1,10 @@
 <h1>hello!</h1>
 
+
+
+<%= link_to "log in", new_user_session_path %>
+<%= link_to "sign up", new_user_registration_path %>
+<%= link_to "sign out", destroy_user_session_path, method: :delete %>
 <ul>
 	<% @posts.each do |post| %>
 		<li><a href="/posts/<%= post.id %>"><%= post.user_id %>.<%= post.text %></a></li>
