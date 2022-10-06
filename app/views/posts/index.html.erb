@@ -1,0 +1,9 @@
+<h1>hello!</h1>
+
+<ul>
+	<% @posts.each do |post| %>
+		<li><a href="/posts/<%= post.id %>"><%= post.user_id %>.<%= post.text %></a></li>
+	<% end %>
+</ul>
+
+<%= link_to "new", new_post_path%>

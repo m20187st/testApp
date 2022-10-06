@@ -1,0 +1,10 @@
+<h1>posts/<%= params[:id] %></h1>
+<h3>comments</h3>
+<ul>
+	<li>postId : <%= @post.id%></li>
+	<li>userId : <%= @post.user_id%></li>
+	<li>text : <%= @post.text%></li>
+</ul>
+<%= button_to "edit", edit_post_path, method: :get %>
+<%= button_to "delete", @post, method: :delete %>
+<%= link_to "return", root_path %>

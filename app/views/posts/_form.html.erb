@@ -1,0 +1,13 @@
+<%= form_with model: @post do |form| %>
+  <div>
+    <div><%= form.label :user_id, "userId" %></div>
+    <div><%= form.text_field :user_id %></div>
+  </div>
+  <div>
+    <div><%= form.label :text %></div>
+    <div><%= form.text_field :text %></div>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
