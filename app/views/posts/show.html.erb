@@ -6,6 +6,10 @@
 	<li>userEmail : <%= @post.user.email%></li>
 	<li>text : <%= @post.text%></li>
 </ul>
+
+<% if @post.user_id === current_user.id %>
 <%= button_to "edit", edit_post_path, method: :get %>
 <%= button_to "delete", @post, method: :delete %>
+<% end %>
+
 <%= link_to "return", root_path %>
