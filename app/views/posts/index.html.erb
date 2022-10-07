@@ -1,6 +1,7 @@
 <% if user_signed_in? %>
 <h1>hello! <%= current_user.email %>.</h1>
 <%= button_to "sign out", destroy_user_session_path, method: :delete %>
+<%= link_to "new", new_post_path%>
 <% else %>
 <h1>hello! guest.</h1>
 <%= link_to "log in", new_user_session_path %>
@@ -12,5 +13,3 @@
 		<li><a href="/posts/<%= post.id %>"><%= post.user_id %>.<%= post.text %></a></li>
 	<% end %>
 </ul>
-
-<%= link_to "new", new_post_path%>

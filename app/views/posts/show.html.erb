@@ -3,6 +3,7 @@
 <ul>
 	<li>postId : <%= @post.id%></li>
 	<li>userId : <%= @post.user_id%></li>
+	<li>userEmail : <%= @post.user.email%></li>
 	<li>text : <%= @post.text%></li>
 </ul>
 <%= button_to "edit", edit_post_path, method: :get %>
