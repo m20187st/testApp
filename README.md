@@ -4,5 +4,6 @@
 `rails s -b 0.0.0.0`   -> http://localhost:3000/
 
 ## 環境
- - ruby 2.7.0
+ - ~~ruby 2.7.0~~
+ - ruby 3.0.4
  - Rails 7.0.4
