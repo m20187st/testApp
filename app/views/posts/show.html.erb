@@ -1,10 +1,14 @@
 <h1>posts/<%= params[:id] %></h1>
-<h3>comments</h3>
 <ul>
 	<li>postId : <%= @post.id%></li>
-	<li>userId : <%= @post.user_id%></li>
+	<li>name : <%= @post.user.name%></li>
+	<li>userEmail : <%= @post.user.email%></li>
 	<li>text : <%= @post.text%></li>
 </ul>
+
+<% if user_signed_in? && @post.user_id === current_user.id %>
 <%= button_to "edit", edit_post_path, method: :get %>
 <%= button_to "delete", @post, method: :delete %>
+<% end %>
+
 <%= link_to "return", root_path %>
