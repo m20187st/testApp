@@ -1,2 +1,7 @@
-<%= button_to "♡いいねを押す", post_favorites_path(@post) %>
-<%= button_to "❤︎いいねを外す", post_favorite_path(@post), method: :delete %>
+<% if @post.favorited_by?(current_user)%>
+<h4>true</h4>
+<%= button_to "❤︎いいね!", post_favorite_path(@post), method: :delete %>
+<% else %>
+<h3>false</h3>
+<%= button_to "♡いいね!", post_favorites_path(@post), method: :post %>
+<% end %>
