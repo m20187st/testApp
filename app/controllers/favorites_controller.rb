@@ -4,13 +4,13 @@ class FavoritesController < ApplicationController
   def create
 	favorite = Favorite.new(user_id: current_user.id, post_id: @post.id)
 	favorite.save
-	render :new
+	redirect_to @post
   end
 
   def destroy
 	favorite = Favorite.find_by(user_id: current_user.id, post_id: @post.id)
 	favorite.destroy
-	render :new
+	redirect_to @post
   end
 
   private
