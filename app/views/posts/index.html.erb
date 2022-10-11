@@ -13,7 +13,8 @@
 	[id]name."text"
 	<% @posts.each do |post| %>
 		<li><a href="/posts/<%= post.id %>">
-			[<%= post.user.id %>]<%= post.user.name %>."<%= post.text %>"
+			[<%= post.user.id %>]<%= post.user.name %>."<%= post.text %>",♡<%= post.favorites.count %>
+			<%#<%= render "favorites/show" %>
 		</li></a>
 	<% end %>
 	<% if user_signed_in? %>
@@ -21,7 +22,7 @@
 		[id]name."text"
 		<% @favorite_lists.each do |list| %>
 			<li><a href="/posts/<%= list.post.id %>">
-				[<%= list.post.user.id %>]<%= list.post.user.name %>."<%= list.post.text %>"
+				[<%= list.post.user.id %>]<%= list.post.user.name %>."<%= list.post.text %>",♡<%= list.post.favorites.count %>
 			</li></a>
 		<% end %>
 	<% end %>
