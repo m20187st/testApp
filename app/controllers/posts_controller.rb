@@ -1,10 +1,14 @@
 class PostsController < ApplicationController
   def index
 	@posts = Post.all
+	if user_signed_in?
+		@favorite_lists = Favorite.where(user_id: current_user.id)
+	end
   end
 
   def show
 	@post = Post.find(params[:id])
+	@favorited_sum = Favorite.where(post_id: params[:id]).count
   end
 
   def new
