@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
 <h1>hello! <%= current_user.name %>(<%= current_user.email %>).</h1>
-<%= button_to "sign out", destroy_user_session_path, method: :delete %>
+<%= button_to "sign out", destroy_user_session_path, method: :delete, class: 'style' %>
 <%= link_to "new", new_post_path %>
 <% else %>
 <h1>hello! guest.</h1>
@@ -14,8 +14,8 @@
 	<% @posts.each do |post| %>
 		<li><a href="/posts/<%= post.id %>">
 			[<%= post.user.id %>]<%= post.user.name %>."<%= post.text %>",♡<%= post.favorites.count %>
-			<%#<%= render "favorites/show" %>
 		</li></a>
+		<%= render "favorites/show", {post: post} %>
 	<% end %>
 	<% if user_signed_in? %>
 		<h4>favorites</h4>
@@ -24,6 +24,7 @@
 			<li><a href="/posts/<%= list.post.id %>">
 				[<%= list.post.user.id %>]<%= list.post.user.name %>."<%= list.post.text %>",♡<%= list.post.favorites.count %>
 			</li></a>
+			<%= render "favorites/show", {post: list.post} %>
 		<% end %>
 	<% end %>
 </ul>
