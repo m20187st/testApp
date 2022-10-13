@@ -13,4 +13,25 @@
 <%= button_to "delete", @post, method: :delete %>
 <% end %>
 
+<%= form_with model: @comment, url: post_comments_path(@post) do |form| %>
+  <div>
+    <div><%= form.label :comment %></div>
+    <div><%= form.text_field :comment %></div>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+<ul>
+<% @comments.each do |comment| %>
+<li>
+	<%= comment.id %>
+	<%= comment.comment %>
+	<%= comment.user_id %>
+	<%= comment.post_id %>
+	<%= button_to "delete", post_comment_path(comment.id), method: :delete %>
+</li>
+<% end %>
+</ul>
+
 <%= link_to "return", root_path %>
