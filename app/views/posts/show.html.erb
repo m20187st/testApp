@@ -4,6 +4,8 @@
 	<li>name : <%= @post.user.name%></li>
 	<li>userEmail : <%= @post.user.email%></li>
 	<li>text : <%= @post.text%></li>
+	<li>created_at : <%= @post.created_at.strftime('%Y/%m/%d %H:%M')%></li>
+	<li>updated_at : <%= @post.updated_at.strftime('%Y/%m/%d %H:%M')%></li>
 </ul>
 
 <%= render "favorites/show", {post: @post} %>
