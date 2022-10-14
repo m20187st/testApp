@@ -1,10 +1,16 @@
 class PostsController < ApplicationController
   def index
 	@posts = Post.all
+	if user_signed_in?
+		@favorite_posts = Post.includes(:favorites).where(favorites: {user_id: current_user.id})
+	end
   end
 
   def show
 	@post = Post.find(params[:id])
+	@comment = Comment.new
+	@comments = Comment.where(post_id: params[:id])
+	@favorited_sum = Favorite.where(post_id: params[:id]).count
   end
 
   def new
@@ -16,7 +22,7 @@ class PostsController < ApplicationController
 	if @post.save
 		redirect_to @post
 	else
-		render :new, status: :unprocessable_entity
+		#render :new
 	end
   end
 
@@ -29,7 +35,7 @@ class PostsController < ApplicationController
 	if @post.update(post_params)
 		redirect_to @post
 	else
-		render :new, status: :unprocessable_entity
+		#render :new, status: :unprocessable_entity
 	end
   end
 

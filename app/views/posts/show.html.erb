@@ -8,9 +8,14 @@
 	<li>updated_at : <%= @post.updated_at.strftime('%Y/%m/%d %H:%M')%></li>
 </ul>
 
+<%= render "favorites/show", {post: @post} %>
+<p>いいね : <%= @favorited_sum %></p>
 <% if user_signed_in? && @post.user_id === current_user.id %>
 <%= button_to "edit", edit_post_path, method: :get %>
 <%= button_to "delete", @post, method: :delete %>
 <% end %>
+
+<%= render "comments/form", {post: @post, comment: @comment} %>
+<%= render partial: "comments/show", collection: @comments, as: "comment" %>
 
 <%= link_to "return", root_path %>
