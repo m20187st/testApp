@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   def index
 	@posts = Post.all
 	if user_signed_in?
-		@favorite_lists = Favorite.where(user_id: current_user.id)
+		@favorite_posts = Post.includes(:favorites).where(favorites: {user_id: current_user.id})
 	end
   end
 
@@ -22,7 +22,7 @@ class PostsController < ApplicationController
 	if @post.save
 		redirect_to @post
 	else
-		render :new, status: :unprocessable_entity
+		#render :new
 	end
   end
 
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
 	if @post.update(post_params)
 		redirect_to @post
 	else
-		render :new, status: :unprocessable_entity
+		#render :new, status: :unprocessable_entity
 	end
   end
 
