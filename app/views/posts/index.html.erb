@@ -1,15 +1,52 @@
-<% if user_signed_in? %>
-<h1>hello! <%= current_user.name %>(<%= current_user.email %>).</h1>
-<%= button_to "sign out", destroy_user_session_path, method: :delete %>
-<%= link_to "new", new_post_path%>
-<% else %>
-<h1>hello! guest.</h1>
-<%= link_to "log in", new_user_session_path %>
-<%= link_to "sign up", new_user_registration_path %>
-<% end %>
+<body>
+	<header>
+		<div class="header-logo">Mini-Twitter</div>
+		<% if user_signed_in? %>
+		<div class="header-list">
+			<ul>
+				<li><%= current_user.name %>さん(<%= current_user.email %>).</li>
+				<li class="btn2"><%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: 'style'%></li>
+			</ul>
+		</div>
+		<% else %>
+		<div class="header-list">
+			<ul>
+				<li ><%= link_to "ログイン", new_user_session_path %></li>
+				<li class="btn1"><%= link_to "新規登録", new_user_registration_path %></li>
+			</ul>
+		</div>
+		<% end %>
+	</header>
 
-<ul>
-	<% @posts.each do |post| %>
-		<li><a href="/posts/<%= post.id %>"><%= post.user.name %>:<%= post.text %></a></li>
-	<% end %>
-</ul>
+	<div class="main">
+		<div class="main-maru">
+			<% if user_signed_in? %>
+				<div class="btn2">
+					<%= link_to "新規作成", new_post_path%>
+				</div>
+			<% end %>
+			<div class="contents">
+				<ul>
+					<% @posts.each do |post| %>
+					<li class="contents-item" >
+						<a href="/posts/<%= post.id %>">
+							<p>
+								<div class="user-name"><%= post.user.name %><div>
+								<div class="text"><%= post.text %></div>
+							</p>
+						</a>
+
+						<p>
+							<div>いいね:数</div>
+							<div>コメント:数</div>
+						</p>
+					</li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+	</footer>
+</body>
