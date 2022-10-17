@@ -1,0 +1,103 @@
+@media screen and (min-width:480px) {}
+@media screen and (min-width:768px) and (max-width:1024px) {}
+@media screen and (min-width:1024px) {}
+
+* {
+    margin:0;
+    padding:0;
+}
+
+body {
+    font-family: "Avenir Next";
+}
+
+li {
+    list-style: none;
+}
+
+.header {
+    background-color: #262626;
+    color: #fff;
+    height: 90px;
+}
+
+.header-logo {
+    float: left;
+    font-size: 45px;
+    padding: 20px 40px;
+    color: #fff;
+}
+
+.header-list li {
+    float: left;
+    padding: 33px 20px;
+}
+
+.main {
+    padding: 100px 80px;
+ }
+
+.section-title {
+    border-bottom: 2px solid #827E7E;
+    font-size: 28px;
+    padding-bottom: 15px;
+    margin-bottom: 50px;
+}
+
+.contents {
+    display: flex;
+}
+
+.contents li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+.wrap{
+    display:-ms-flexbox;
+    display:-webkit-box;
+    display: inline-block;
+}
+.wrap div{
+    width:300px!important;
+}
+
+.wrap-item {
+    background-color: #827E7E;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 160px;
+    color: #fff;
+
+}
+
+.wrap-item-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 32px;
+}
+
+.wrap-item-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 96px;
+}
+
+.wrap-item-counts {
+    height: 32px;
+}
+
+.favorite-button {
+    float: right;
+}
+
+.test {
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
