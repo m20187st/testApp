@@ -1,8 +1,8 @@
 <li class="wrap">
 	<div class="wrap-item">
 		<%= link_to post_path(post) do %>
-		<div class="wrap-item-name"><span class="item-color-name">[<%= post.user.id %>]<%= post.user.name %></span><span class="item-color-created-at"><%= post.created_at.strftime("%m/%d/%H:%M") %></span></div>
-		<div class="wrap-item-text"><span class="item-color-text">"<%= post.text %>"</span></div>
-		<div class="wrap-item-counts"><span class="item-color-count">♡<%= post.favorites.count %> ※<%= post.comments.count%><% end %></span><span class="favorite-button"><%= render "favorites/show", {post: post} %></span></div>
+		<div class="wrap-item-name"><span class="item-name-color">[<%= post.user.id %>]<%= post.user.name %></span><span class="item-color-created-at"><%= post.created_at.strftime("%m/%d/%H:%M") %></span></div>
+		<div class="wrap-item-text">"<%= post.text %>"</div>
+		<div class="wrap-item-counts"><span class="favorite-button"><%= render "favorites/show", {post: post} %></span><%= post.favorites.count %> ※<%= post.comments.count%></span></div><% end %>
 	</div>
 </li>

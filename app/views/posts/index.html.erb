@@ -1,6 +1,7 @@
-<meta  name=”viewport” content=”width=device-width,initial-scale=1.0″>
+
 
 <body>
+<meta  name=”viewport” content=”width=device-width,initial-scale=1.0″>
 	<header>
 		<div class="header">
 			<div class="header-logo">Mini-Twitter</div>
@@ -8,14 +9,14 @@
 			
 				<% if user_signed_in? %>
 					<ul>
-						<li><%= button_to "ログアウト", destroy_user_session_path, method: :delete, class:"button2" %></li>
+						<li><span class="logout-button"><%= button_to "ログアウト", destroy_user_session_path, method: :delete, class:"button2" %></span></li>
 						<li class="user-name"><%= current_user.name %>(<%= current_user.email %>) さん</li>
 					</ul>
 
 				<% else %>
 					<ul>
-						<li class="button1"><%= link_to "ログイン", new_user_session_path %></li>
-						<li class="button1"><%= link_to "会員登録", new_user_registration_path %></li>
+						<li class="button1"><span class="login"><%= link_to "ログイン", new_user_session_path %></span></li>
+						<li class="button1"><span class="register"><%= link_to "会員登録", new_user_registration_path %></span></li>
 					</ul>
 					
 				<% end %>
