@@ -38,6 +38,7 @@ li {
 
 .main {
     padding: 100px 80px;
+    position: fixed;
  }
 
 .section-title {
@@ -75,6 +76,7 @@ li {
     color: #fff;
     border-radius: 3px;
     box-shadow: 6px 6px 3px #4D4C4C;
+    
 }
 
 .wrap-item-name {
@@ -96,6 +98,8 @@ li {
     -webkit-line-clamp: 4;
     height: 92px;
     color: #fff;
+    box-sizing: border-box;
+    padding: 0px 20px; 
 }
 
 .wrap-item-counts {

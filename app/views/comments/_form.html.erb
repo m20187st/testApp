@@ -1,9 +1,24 @@
 <% if user_signed_in? %>
-	<%= form_with model: comment, url: post_comments_path(post) do |form| %>
-		<%= form.label :comment %>
-		<%= form.text_field :comment %>
+<%= form_with model: comment, url: post_comments_path(post) do |form| %>
+
+<div class="comment-reply">
+	<div class="comment-form">
+		<%= form.text_field :comment, :placeholder => "返信を入力…" %>
+	</div>
+	
+	<div class="comment-button">
 		<%= form.submit %>
-	<% end %>
+	</div>
+</div>
+<% end %>
+
 <% else %>
 	<p>コメントするにはアカウントが必要です。 </p>
-<% end %>
+<% end %>		
+
+<%# 使わない %>
+<%# 
+%= form.label :comment %
+
+
+ %>
