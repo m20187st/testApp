@@ -69,3 +69,4 @@ yarn-debug.log*
 /public/uploads
 
 *.txt
+.DS_Store
