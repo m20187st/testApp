@@ -6,7 +6,6 @@
 }
 
 .devise-title {
-
 }
 
 .devise-title2 {
@@ -14,12 +13,12 @@
     height: 50px;
     line-height: 50px;
 }
- 
+
 .form-content {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
     margin-bottom: 30px;
-} 
+}
 
 .devise-contents {
     width: 500px;
@@ -27,7 +26,6 @@
 }
 
 .form-input {
-    /* 入力欄のレイアウト */
     padding: 15px;
     height: 60px;
     border-radius: 3px;
