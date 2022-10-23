@@ -1,3 +1,37 @@
+<title>ログイン</title>
+<main>
+    <div class="wrapper">
+        <div class="devise-header">
+            <h2 class="devise-header2">ヘッダー</h2>
+        </div>
+        <div class="devise-contents">
+          <div class="devise-title">
+            <h2 class="devise-title2">ログイン</h2>
+          </div>
+          <form>
+              <div class="form">
+                  <div>
+                      <div class="form-content">
+                          <label class="form-label">メールアドレス</label>
+                          <input class="form-input" type="text">
+                      </div>
+                      <div class="form-content">
+                          <label class="form-label">パスワード</label>
+                          <input class="form-input" type="text">
+                      </div>
+                  </div>
+              </div>
+              <div class="">
+                  <input type="submit" value="ログイン" class="btn-submit">
+              </div>
+          </form>
+          <div class="btn-return">
+              <a href="/" class="">戻る</a>
+          </div>
+        </div>
+    </div>
+</main>
+<% if false %>
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -25,3 +59,4 @@
 
 <%#<%= render "devise/shared/links" %>
 <%= link_to "return", root_path %>
+<% end %>
