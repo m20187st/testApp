@@ -6,5 +6,22 @@ import jquery from "jquery"
 window.$ = jquery
 
 $(function() {
-  console.log("Hello Rails7!");
+	let tabs = $(".menu_item");
+	const tabsAry = Array.prototype.slice.call(tabs);
+	console.log(tabs);
+	console.log(tabsAry);
+
+	function tabSwitch() {
+		$(".active").removeClass("active");
+		$(this).addClass("active");
+		$(".show").removeClass("show");
+
+		const index = tabs.index(this);
+		$(".content").removeClass("show").eq(index).addClass("show");
+	}
+
+	tabs.on('click', tabSwitch);
+	tabs.on('click', function () {
+		console.log("called.");
+	});
 })
