@@ -1,0 +1,15 @@
+.active  {
+	background-color: aquamarine;
+}
+
+.content {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+/*.content {
+	display: block;
+}*/
+

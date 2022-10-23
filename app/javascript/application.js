@@ -5,7 +5,7 @@ import "controllers"
 import jquery from "jquery"
 window.$ = jquery
 
-$(function() {
+$(document).on('turbo:load', function() {
 	let tabs = $(".menu_item");
 	const tabsAry = Array.prototype.slice.call(tabs);
 	console.log(tabs);
@@ -24,4 +24,4 @@ $(function() {
 	tabs.on('click', function () {
 		console.log("called.");
 	});
-})
+});
