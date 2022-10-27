@@ -101,6 +101,13 @@
 	padding: 20px 40px;
 	font-size: 25px;
 	color: black;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+.item:hover {
+	background-color: #F8CBAD;
+	transition: 0.1s;
 }
 
 .item-link {

@@ -17,7 +17,7 @@
 		<div>
 			<% if user_signed_in? %>
 				<ul class="header-lists">
-					<li class="header-list"><%= current_user.name %></li>
+					<%#<li class="header-list"><%= current_user.name %></li>
 					<li><%= button_to "ログアウト", destroy_user_session_path,method: :delete, class: "header-list" %></li>
 				</ul>
 			<% else %>

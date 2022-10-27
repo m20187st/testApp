@@ -30,6 +30,14 @@ header {
 .header-list {
 	display: block;
 	margin-right: 80px;
-	color: #a9a9a9;
+	padding: 15px 20px;
+	border-radius: 5px;
 	font-size: 20px;
+	color: #a9a9a9;
+}
+
+.header-list:hover {
+	background-color: #dcdcdc;
+	text-decoration: underline;
+	transition: 0.1s;
 }
