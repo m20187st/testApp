@@ -9,8 +9,6 @@ body::after {
 	width: 100%;
 	z-index: -1;
 	content: "";
-	/*background-color: #ffe699;#ffe699
-	/*background-color: #f8cbad;*/
 	background-color: #F4B183;
 	background-image: linear-gradient(135deg, #F4B183 0%, #FFE699 100%);
 }

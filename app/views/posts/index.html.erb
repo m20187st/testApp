@@ -17,8 +17,8 @@
 		<div>
 			<% if user_signed_in? %>
 				<ul class="header-lists">
-					<li><%= current_user.name %></li>
-					<li><%= button_to "ログアウト", destroy_user_session_path,method: :delete %></li>
+					<li class="header-list"><%= current_user.name %></li>
+					<li><%= button_to "ログアウト", destroy_user_session_path,method: :delete, class: "header-list" %></li>
 				</ul>
 			<% else %>
 				<ul class="header-lists">
@@ -46,9 +46,11 @@
 			<%= render partial: "show", collection: @posts, as: "post", locals: {flag: "post"} %>
 		</div>
 		<div class="contents content-js">
+			<div class="none"></div>
 			<%= render partial: "show", collection: @favorite_posts, as: "post", locals: {flag: "fav"} %>
 		</div>
 		<div class="contents content-js">
+			<div class="none"></div>
 			<%= render partial: "show", collection: @user_posts, as: "post", locals: {flag: "user"} %>
 		</div>
 	</div>
