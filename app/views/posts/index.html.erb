@@ -1,67 +1,78 @@
 <% if false %>
-<% if user_signed_in? %>
-<h1>hello! <%= current_user.name %>(<%= current_user.email %>).</h1>
-<%= button_to "sign out", destroy_user_session_path, method: :delete %>
-<%= link_to "new", new_post_path %>
-<% else %>
-<h1>hello! guest.</h1>
-<%= link_to "log in", new_user_session_path %>
-<%= link_to "sign up", new_user_registration_path %>
-<% end %>
-
-<ul>
-	<h4>posts</h4>
-	[id]name."text"
-	<%= render partial: "show", collection: @posts, as: "post" %>
 	<% if user_signed_in? %>
-		<h4>favorites</h4>
-		[id]name."text"
-		<%= render partial: "show", collection: @favorite_posts, as: "post" %>
+	<h1>hello! <%= current_user.name %>(<%= current_user.email %>).</h1>
+	<%= button_to "sign out", destroy_user_session_path, method: :delete %>
+	<%= link_to "new", new_post_path %>
+	<% else %>
+	<h1>hello! guest.</h1>
+	<%= link_to "log in", new_user_session_path %>
+	<%= link_to "sign up", new_user_registration_path %>
 	<% end %>
-</ul>
 <% end %>
-
-<meta  name=”viewport” content=”width=device-width,initial-scale=1.0″>
-<body>
-	<header>
-		<div class="header">
-			<div class="header-logo">Mini-Twitter</div>
-				<div class="header-list">
+<header>
+	<div class="header">
+		<div class="header-logo">
+			Mini-Twitter
+		</div>
+		<div class="header-list">
+			<% if user_signed_in? %>
+			<ul>
+				<li><%= link_to "新規投稿", new_post_path %></li>
+				<li><%= current_user.name %>(<%= current_user.email %>)</li>
+				<li><%= button_to "ログアウト", destroy_user_session_path,method: :delete %></li>
+			</ul>
+			<% else %>
+			<ul>
+				<li><%= link_to "ログイン", new_user_session_path %></li>
+				<li><%= link_to "会員登録", new_user_registration_path %></li>
+			</ul>
+			<% end %>
+		</div>
+	</div>
+</header>
+<main>
+	<div class="style">
+		<div class="side-bar">
+			<ul class="items">
+				<li class="item menu_item-js active-js">最新の投稿</li>
 				<% if user_signed_in? %>
-					<ul>
-						<li><%= link_to "新規投稿", new_post_path %></li>
-						<li><%= current_user.name %>(<%= current_user.email %>)</li>
-						<li><%= button_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-					</ul>
-				<% else %>
-					<ul>
-						<li><%= link_to "ログイン", new_user_session_path %></li>
-						<li><%= link_to "会員登録", new_user_registration_path %></li>
-					</ul>
-
+					<li class="item menu_item-js">お気に入り</li>
+					<li class="item menu_item-js">自分の投稿</li>
+					<li class="item"><%= link_to "投稿する", new_post_path, class: "item-link" %></li>
 				<% end %>
-				</div>
+			</ul>
+		</div>
+		<div class="content-js show-js">
+			<%= render partial: "show", collection: @posts, as: "post", locals: {flag: "post"} %>
+		</div>
+		<div class="content-js">
+			<%= render partial: "show", collection: @favorite_posts, as: "post", locals: {flag: "fav"} %>
+		</div>
+		<div class="content-js">
+			<%= render partial: "show", collection: @user_posts, as: "post", locals: {flag: "user"} %>
+		</div>
+	</div>
+</main>
+
+<% if false %>
+	<div class="main">
+		<div>
+			<div class="menu_item-js active-js">posts</div>
+			<div class="menu_item-js">favorites</div>
+		</div>
+		<div class="content-js show-js">
+			<h3 class="section-title">posts</h3>
+			<div class="contents">
+				<div class="contents-item"><%= render partial: "show", collection: @posts, as: "post", locals: {flag: "post"} %></div>
 			</div>
 		</div>
-		<div class="main">
-			<div>
-				<div class="menu_item-js active-js">posts</div>
-				<div class="menu_item-js">favorites</div>
+		<div class="content-js">
+			<% if user_signed_in? %>
+			<h3 class="section-title">favorites</h3>
+			<div class="contents">
+				<div class="contents-item"><%= render partial: "show", collection: @favorite_posts, as: "post", locals: {flag: "fav"} %></div>
 			</div>
-			<div class="content-js show-js">
-				<h3 class="section-title">posts</h3>
-				<div class="contents">
-					<div class="contents-item"><%= render partial: "show", collection: @posts, as: "post", locals: {flag: "post"} %></div>
-				</div>
-			</div>
-			<div class="content-js">
-				<% if user_signed_in? %>
-				<h3 class="section-title">favorites</h3>
-				<div class="contents">
-                    <div class="contents-item"><%= render partial: "show", collection: @favorite_posts, as: "post", locals: {flag: "fav"} %></div>
-                </div>
-				<% end %>
-			</div>
+			<% end %>
 		</div>
-	<header>
-</body>
+	</div>
+<% end %>

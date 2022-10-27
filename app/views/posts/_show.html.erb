@@ -1,6 +1,25 @@
-<li>
-	<%= link_to post_path(post) do %>
-	[<%= post.user.id %>]<%= post.user.name %>."<%= post.text %>",<%= post.comments.count%>,♡<%= post.favorites.count %>
-	<% end %>
-	<%= render "favorites/show", {post: post, flag: flag} %>
-</li>
+<div class="content">
+<%= link_to post_path(post), class: "content-show" do %>
+	<h2 class="username"><%= post.user.name %></h2>
+	<p class="text">
+		<%= post.text %>
+	</p>
+	<div class="info">
+		<div class="info-right">
+			<i class="fa-solid fa-calendar icon-style mr"></i>
+			<p>2022/10/22</p>
+		</div>
+		<div class="info-left">
+			<div class="info-fav">
+				<object data="" type="">
+					<%= render "favorites/show", {post: post, flag: flag} %>
+				</object>
+			</div>
+			<div class="">
+				<i class="fa-solid fa-message icon-sytle"></i>
+				<span><%= post.comments.count%></span>
+			</div>
+		</div>
+	</div>
+<% end %>
+</div>
