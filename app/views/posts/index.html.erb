@@ -20,7 +20,6 @@
 	<% end %>
 </ul>
 <% end %>
-<%#<%= image_tag "sample.png" %>
 
 <meta  name=”viewport” content=”width=device-width,initial-scale=1.0″>
 <body>
@@ -46,16 +45,16 @@
 		</div>
 		<div class="main">
 			<div>
-				<div class="menu_item active">posts</div>
-				<div class="menu_item">favorites</div>
+				<div class="menu_item-js active-js">posts</div>
+				<div class="menu_item-js">favorites</div>
 			</div>
-			<div class="content show">
+			<div class="content-js show-js">
 				<h3 class="section-title">posts</h3>
 				<div class="contents">
 					<div class="contents-item"><%= render partial: "show", collection: @posts, as: "post", locals: {flag: "post"} %></div>
 				</div>
 			</div>
-			<div class="content show">
+			<div class="content-js">
 				<% if user_signed_in? %>
 				<h3 class="section-title">favorites</h3>
 				<div class="contents">
@@ -66,7 +65,3 @@
 		</div>
 	<header>
 </body>
-
-<% if false %>
-<div class="contents-item"><%= render partial: "favlists", favorite_posts: @favorite_posts %></div>
-<% end %>
