@@ -42,13 +42,13 @@
 				<% end %>
 			</ul>
 		</div>
-		<div class="content-js show-js">
+		<div class="contents content-js show-js">
 			<%= render partial: "show", collection: @posts, as: "post", locals: {flag: "post"} %>
 		</div>
 		<div class="content-js">
 			<%= render partial: "show", collection: @favorite_posts, as: "post", locals: {flag: "fav"} %>
 		</div>
-		<div class="content-js">
+		<div class="contents content-js">
 			<%= render partial: "show", collection: @user_posts, as: "post", locals: {flag: "user"} %>
 		</div>
 	</div>
