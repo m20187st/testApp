@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
   def index
-	@posts = Post.order(created_at: :desc).limit(5)
+	@posts = Post.order(created_at: :desc).limit(10)
 	if user_signed_in?
-		@favorite_posts = Post.includes(:favorites).where(favorites: {user_id: current_user.id}).order('favorites.created_at desc').limit(5)
-		@user_posts = Post.where(user_id: current_user.id).order(created_at: :desc).limit(5)
+		@favorite_posts = Post.includes(:favorites).where(favorites: {user_id: current_user.id}).order('favorites.created_at desc').limit(10)
+		@user_posts = Post.where(user_id: current_user.id).order(created_at: :desc).limit(10)
 	end
   end
 
