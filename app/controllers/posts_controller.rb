@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 	@posts = Post.all
 	if user_signed_in?
 		@favorite_posts = Post.includes(:favorites).where(favorites: {user_id: current_user.id})
+		@user_posts = Post.where(user_id: current_user.id)
 	end
   end
 
