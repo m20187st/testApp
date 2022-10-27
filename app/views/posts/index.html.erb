@@ -28,14 +28,12 @@
 		<div class="header">
 			<div class="header-logo">Mini-Twitter</div>
 				<div class="header-list">
-
 				<% if user_signed_in? %>
 					<ul>
 						<li><%= link_to "新規投稿", new_post_path %></li>
 						<li><%= current_user.name %>(<%= current_user.email %>)</li>
 						<li><%= button_to "ログアウト", destroy_user_session_path, method: :delete %></li>
 					</ul>
-
 				<% else %>
 					<ul>
 						<li><%= link_to "ログイン", new_user_session_path %></li>
@@ -46,7 +44,6 @@
 				</div>
 			</div>
 		</div>
-
 		<div class="main">
 			<div>
 				<div class="menu_item active">posts</div>
@@ -55,17 +52,21 @@
 			<div class="content show">
 				<h3 class="section-title">posts</h3>
 				<div class="contents">
-					<div class="contents-item"><%= render partial: "show", collection: @posts, as: "post" %></div>
+					<div class="contents-item"><%= render partial: "show", collection: @posts, as: "post", locals: {flag: "post"} %></div>
 				</div>
 			</div>
-			<div class="content">
+			<div class="content show">
 				<% if user_signed_in? %>
 				<h3 class="section-title">favorites</h3>
 				<div class="contents">
-					<div class="contents-item"><%= render partial: "show", collection: @favorite_posts, as: "post" %></div>
-				</div>
+                    <div class="contents-item"><%= render partial: "show", collection: @favorite_posts, as: "post", locals: {flag: "fav"} %></div>
+                </div>
 				<% end %>
 			</div>
 		</div>
 	<header>
 </body>
+
+<% if false %>
+<div class="contents-item"><%= render partial: "favlists", favorite_posts: @favorite_posts %></div>
+<% end %>
