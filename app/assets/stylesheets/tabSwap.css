@@ -1,5 +1,11 @@
 .active-js  {
-	background-color: aquamarine;
+	background-color: #F4B183;
+	color: #fff;
+	font-weight: bold;
+}
+
+.active-js:hover {
+	background-color: #F4B183;
 }
 
 .content-js {
