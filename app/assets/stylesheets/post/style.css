@@ -1,12 +1,12 @@
 .style {
-	margin-top: 30px;
+	/*margin-top: 30px;*/
 	display: flex;
 	justify-content: center;
 	/*align-items: center;*/
 }
 
 .contents {
-	height: calc(100vh - 130px);
+	height: calc(100vh);
 	overflow: scroll;
 
 	-ms-overflow-style: none;
@@ -17,10 +17,15 @@
 	display:none;
 }
 
+.none {
+	width: 700px;
+	height: 130px;
+}
+
 .content {
 	background-color: #ffffff;
 	width: 640px;
-	margin: 30px 30px 30px 30px;
+	margin: 30px 30px 45px 30px;
 	box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.25);
 }
 
@@ -71,9 +76,12 @@
 }
 
 .side-bar {
-	/*margin-top: 30px;*/
+	padding: 30px;
+	margin-top: 160px;
 	margin-right: 60px;
-	/*position: relative;*/
+	margin-bottom: 60px;
+	background: rgba(255,255,255,0.4);
+	box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.25);
 }
 
 .items {
@@ -88,8 +96,15 @@
 }
 
 .item-link {
-
-	/*background-color: transparent;*/
+	display: block;
+	background-color: #fff;
+	margin-top: 10px;
+	padding: 10px 40px;
+	font-size: 25px;
+	color: #F4B183;
+	text-align: center;
+	font-weight: bold;
+	border-radius: 20px;
 }
 
 .active {
