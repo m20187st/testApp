@@ -70,3 +70,5 @@ yarn-debug.log*
 
 *.txt
 .DS_Store
+zzz/*
+Procfile
