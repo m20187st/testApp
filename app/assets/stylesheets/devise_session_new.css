@@ -1,14 +1,10 @@
-.devise-header2 {
- border-bottom: 1px solid #827E7E;
- padding: 10px;
- margin: 20px;
- font-size: 40px;
+.wrapper-flex {
+	height: 100vh;
+	display: flex;
+	align-items: center;
 }
 
 .devise-title {
-}
-
-.devise-title2 {
     text-align:center;
     height: 50px;
     line-height: 50px;
