@@ -1,15 +1,14 @@
-.active  {
+.active-js  {
 	background-color: aquamarine;
 }
 
-.content {
+.content-js {
 	display: none;
 }
 
-.show {
+.show-js {
 	display: block;
 }
 /*.content {
 	display: block;
 }*/
-

@@ -1,6 +1,6 @@
 <li>
 	<%= link_to post_path(post) do %>
-	[<%= post.user.id %>]<%= post.user.name %>."<%= post.text %>",※<%= post.comments.count%>,♡<%= post.favorites.count %>
+	[<%= post.user.id %>]<%= post.user.name %>."<%= post.text %>",<%= post.comments.count%>,♡<%= post.favorites.count %>
 	<% end %>
-	<%= render "favorites/show", {post: post} %>
+	<%= render "favorites/show", {post: post, flag: flag} %>
 </li>

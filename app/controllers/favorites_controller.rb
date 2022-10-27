@@ -2,15 +2,28 @@ class FavoritesController < ApplicationController
   before_action :get_post
 
   def create
-	favorite = Favorite.new(user_id: current_user.id, post_id: @post.id)
-	favorite.save
-	redirect_to request.referer
+	set_fav = Favorite.find_by(user_id: current_user.id, post_id: @post.id)
+	if set_fav.nil?
+		favorite = Favorite.new(user_id: current_user.id, post_id: @post.id)
+		favorite.save
+	end
+	render turbo_stream: turbo_stream.replace(
+		"favorite-btn#{@post.id}#{params[:flag]}",
+		partial: 'favorites/show',
+		locals: {post: @post, flag: params[:flag]}
+	)
   end
 
   def destroy
 	favorite = Favorite.find_by(user_id: current_user.id, post_id: @post.id)
-	favorite.destroy
-	redirect_to request.referer
+	if !favorite.nil?
+		favorite.destroy
+	end
+	render turbo_stream: turbo_stream.replace(
+		"favorite-btn#{@post.id}#{params[:flag]}",
+		partial: 'favorites/show',
+		locals: {post: @post, flag: params[:flag]}
+	)
   end
 
   private
