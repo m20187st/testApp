@@ -1,21 +1,57 @@
-<h1>posts/<%= params[:id] %></h1>
-<ul>
-	<li>postId : <%= @post.id%></li>
-	<li>name : <%= @post.user.name%></li>
-	<li>userEmail : <%= @post.user.email%></li>
-	<li>text : <%= @post.text%></li>
-	<li>created_at : <%= @post.created_at.strftime('%Y/%m/%d %H:%M')%></li>
-	<li>updated_at : <%= @post.updated_at.strftime('%Y/%m/%d %H:%M')%></li>
-</ul>
+<div class="detail-width">
+	<div class="detail-header">
+		<div class="detail-header-back">
+			<%= link_to "←", root_path %>
+			<div class="detail-header-title">
+					投稿詳細
+			</div>
+		</div>
+	</div>
 
-<%= render "favorites/show", {post: @post} %>
-<p>いいね : <%= @favorited_sum %></p>
-<% if user_signed_in? && @post.user_id === current_user.id %>
-<%= button_to "edit", edit_post_path, method: :get %>
-<%= button_to "delete", @post, method: :delete %>
-<% end %>
+	<div class="detail-container">
+		<div class="detail-name">
+			<li class="detail-user-name">name: <%= @post.user.name%></li>
+			<li class="detail-user-id">nameId: <%= params[:id] %></li>
+		</div>
 
-<%= render "comments/form", {post: @post, comment: @comment} %>
-<%= render partial: "comments/show", collection: @comments, as: "comment" %>
+		<div class="detail-table">
+			<div class="detail-text">
+				text : <%= @post.text%>
+			</div>
 
-<%= link_to "return", root_path %>
+			<div class="detail-created-at">
+				created-at: <%= @post.created_at.strftime('%H:%M 20%y年 %m月%d日 ')%>
+			</div>
+
+			<div class="detail-favo">
+				<%= @favorited_sum %>件のいいね
+				<ul>
+					<li><%= render "favorites/show", {post: @post} %></li>
+					<% if user_signed_in? && @post.user_id === current_user.id %>
+					<li><%= button_to "edit", edit_post_path, method: :get %></li>
+					<li><%= button_to "delete", @post, method: :delete %></li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+
+		<div class="detail-coments">
+			<%= render "comments/form", {post: @post, comment: @comment} %>
+		</div>
+
+		<div class="detail-coments-list">
+			<%= render partial: "comments/show", collection: @comments, as: "comment" %>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<%#//////////////////////////////////////使ってない//////////////////////////////////////////%>
+<%#	
+投稿者email：	%= @post.user.email%
+投稿ID：		%= @post.id%
+updated_at : 	%= @post.updated_at.strftime('%m/%d %H:%M')%
+%>

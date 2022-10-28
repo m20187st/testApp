@@ -1,0 +1,121 @@
+html{
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.detail-width {
+    width: 500px;
+    min-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* background-color: rgb(255, 225, 225); */
+}
+
+
+/*//////////////////////////////////////////////////////////ヘッダー系//////////////////////////////////////////////////////////*/
+.detail-header {
+    height: 70px;
+    padding: 0px 16px;
+
+    /* background-color: rgb(255, 197, 197); */
+}
+
+.detail-header-back {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #5f5f5f;
+
+    /* background-color: rgb(255, 161, 161); */
+}
+
+.detail-header-title {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+    font-size: 20px;
+
+    /* background-color: rgb(255, 154, 154); */
+}
+
+/*//////////////////////////////////////////////////////////ヘッダー系//////////////////////////////////////////////////////////*/
+.detail-container {
+    padding: 0px 16px;
+
+    /* background-color: rgb(228, 228, 255); */
+}
+
+.detail-name {
+    padding: 12px 0px 0px;
+    height: 50px;
+
+    /* background-color: rgb(203, 203, 255); */
+}
+
+.detail-user-name {
+    font-size: 20px;
+
+    /* background-color: rgb(173, 173, 255); */
+}
+
+.detail-user-id {
+    font-size: 12px;
+
+    /* background-color: rgb(136, 136, 255); */
+}
+
+.detail-text {
+    font-size: 30px;
+    overflow-wrap:  break-word;
+
+    /* background-color: rgb(103, 103, 255); */
+}
+
+.detail-created-at {
+    padding: 3px;
+    font-size: 12px;
+
+    /* background-color: rgb(75, 75, 255); */
+}
+
+.detail-favo {
+    height: 40px;
+    padding: 16px 4px;
+    display: flex;
+    align-items: center;
+
+    border-top: 1px solid #5f5f5f;
+    border-bottom: 1px solid #5f5f5f;
+
+    /* background-color: rgb(45, 45, 255); */
+}
+
+.detail-favo button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+    width: 60px;
+
+    /* background-color: rgb(255, 255, 212); */
+}
+
+.detail-favo ul {
+    padding: 0px 60px;
+    width: 250px;
+    display: flex;
+    justify-content:space-between;
+}
+
+
+
+
+
