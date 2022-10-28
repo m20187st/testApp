@@ -21,6 +21,17 @@ header {
 	line-height: 100px;
 }
 
+.header-logo-btn {
+	display: block;
+	padding: 0 50px;
+	font-weight: bold;
+	color: #fff;
+}
+/*
+.header-logo-btn:hover {
+	background-color: #F8CBAD;
+}*/
+
 .header-lists {
 	display: flex;
 	font-size: 20px;
