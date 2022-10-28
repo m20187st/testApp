@@ -1,0 +1,40 @@
+.devise-title {
+	text-align:center;
+	height: 50px;
+	line-height: 50px;
+}
+
+.form-content {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 30px;
+}
+
+.devise-contents {
+	width: 500px;
+	margin: 0 auto;
+}
+
+.form-input {
+	padding: 15px;
+	height: 60px;
+	border-radius: 3px;
+	border: 1px solid #827E7E;
+	box-sizing: border-box;
+}
+
+.form-textarea {
+	height: 200px;
+	width: 500px;
+	resize: none;
+}
+
+.btn-submit {
+	height: 40px;
+	width: 100%;
+	text-align: center;
+}
+
+.btn-return {
+	margin-top: 30px;
+}

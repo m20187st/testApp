@@ -1,42 +1,80 @@
-
-
-<body>
-<meta  name=”viewport” content=”width=device-width,initial-scale=1.0″>
-	<header>
-		<div class="header">
-			<div class="header-logo">Mini-Twitter</div>
-				<div class="header-list">
-			
-				<% if user_signed_in? %>
-					<ul>
-						<li><span class="logout-button"><%= button_to "ログアウト", destroy_user_session_path, method: :delete, class:"button2" %></span></li>
-						<li class="user-name"><%= current_user.name %>(<%= current_user.email %>) さん</li>
-					</ul>
-
-				<% else %>
-					<ul>
-						<li class="button1"><span class="login"><%= link_to "ログイン", new_user_session_path %></span></li>
-						<li class="button1"><span class="register"><%= link_to "会員登録", new_user_registration_path %></span></li>
-					</ul>
-					
-				<% end %>
-				</div>
-			</div>
+<% if false %>
+	<% if user_signed_in? %>
+	<h1>hello! <%= current_user.name %>(<%= current_user.email %>).</h1>
+	<%= button_to "sign out", destroy_user_session_path, method: :delete %>
+	<%= link_to "new", new_post_path %>
+	<% else %>
+	<h1>hello! guest.</h1>
+	<%= link_to "log in", new_user_session_path %>
+	<%= link_to "sign up", new_user_registration_path %>
+	<% end %>
+<% end %>
+<header class="header">
+	<div class="header">
+		<div class="header-logo">
+			<span>t-ch</span>
 		</div>
+		<div>
+			<% if user_signed_in? %>
+				<ul class="header-lists">
+					<%#<li class="header-list"><%= current_user.name %></li>
+					<li><%= button_to "ログアウト", destroy_user_session_path,method: :delete, class: "header-list" %></li>
+				</ul>
+			<% else %>
+				<ul class="header-lists">
+					<li class=""><%= link_to "ログイン", new_user_session_path, class: "header-list" %></li>
+					<li class=""><%= link_to "会員登録", new_user_registration_path, class: "header-list" %></li>
+				</ul>
+			<% end %>
+		</div>
+	</div>
+</header>
+<main>
+	<div class="style">
+		<div class="side-bar">
+			<ul class="items">
+				<li class="item menu_item-js active-js">最新の投稿</li>
+				<% if user_signed_in? %>
+					<li class="item menu_item-js">お気に入り</li>
+					<li class="item menu_item-js">自分の投稿</li>
+					<li class=""><%= link_to "投稿する", new_post_path, class: "item-link" %></li>
+				<% end %>
+			</ul>
+		</div>
+		<div class="contents content-js show-js">
+			<div class="none"></div>
+			<%= render partial: "show", collection: @posts, as: "post", locals: {flag: "post"} %>
+		</div>
+		<div class="contents content-js">
+			<div class="none"></div>
+			<%= render partial: "show", collection: @favorite_posts, as: "post", locals: {flag: "fav"} %>
+		</div>
+		<div class="contents content-js">
+			<div class="none"></div>
+			<%= render partial: "show", collection: @user_posts, as: "post", locals: {flag: "user"} %>
+		</div>
+	</div>
+</main>
 
-		<div class="main">
-			<div class="button1"><%= link_to "投稿", new_post_path %></div>
+<% if false %>
+	<div class="main">
+		<div>
+			<div class="menu_item-js active-js">posts</div>
+			<div class="menu_item-js">favorites</div>
+		</div>
+		<div class="content-js show-js">
 			<h3 class="section-title">posts</h3>
 			<div class="contents">
-				<div class="contents-item"><%= render partial: "show", collection: @posts, as: "post" %></div>
+				<div class="contents-item"><%= render partial: "show", collection: @posts, as: "post", locals: {flag: "post"} %></div>
 			</div>
+		</div>
+		<div class="content-js">
 			<% if user_signed_in? %>
 			<h3 class="section-title">favorites</h3>
 			<div class="contents">
-				<div class="contents-item"><%= render partial: "show", collection: @favorite_posts, as: "post" %></div>
+				<div class="contents-item"><%= render partial: "show", collection: @favorite_posts, as: "post", locals: {flag: "fav"} %></div>
 			</div>
 			<% end %>
 		</div>
-
-	<header>
-</body>
+	</div>
+<% end %>

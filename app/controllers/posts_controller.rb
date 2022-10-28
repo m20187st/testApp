@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
   def index
-	@posts = Post.all
+	@posts = Post.order(created_at: :desc).limit(10)
 	if user_signed_in?
-		@favorite_posts = Post.includes(:favorites).where(favorites: {user_id: current_user.id})
+		@favorite_posts = Post.includes(:favorites).where(favorites: {user_id: current_user.id}).order('favorites.created_at desc').limit(10)
+		@user_posts = Post.where(user_id: current_user.id).order(created_at: :desc).limit(10)
 	end
   end
 
@@ -10,7 +11,6 @@ class PostsController < ApplicationController
 	@post = Post.find(params[:id])
 	@comment = Comment.new
 	@comments = Comment.where(post_id: params[:id])
-	@favorited_sum = Favorite.where(post_id: params[:id]).count
   end
 
   def new

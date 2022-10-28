@@ -6,5 +6,5 @@ class User < ApplicationRecord
   has_many :posts
   has_many :posts, through: :favorites
   has_many :favotite_posts, through: :favorites, source: :post
-  has_many :comments
+  has_many :comments, dependent: :destroy
 end
