@@ -1,13 +1,16 @@
 <main>
-    <div class="wrapper-flex">
-        <div class="devise-contents">
-          <h2 class="devise-title">ログイン</h2>
-          <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
+	<div class="wrapper-flex">
+		<div class="devise-contents">
+			<h2 class="devise-title">ログイン</h2>
+		<%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
               <div class="form">
                   <div>
-					  <p class="alert testStyle"><%= alert %></p>
-					  <%= render "devise/shared/error_messages" %>
-					  <%= render 'devise/shared/error_messages', model: f.object %>
+					<% if alert.present?%>
+				  		<div class="devise-error">
+							<i class="fa-solid fa-circle-exclamation devise-error-icon"></i>
+							<p class="alert "><%= alert %></p>
+						</div>
+					<% end %>
                       <div class="form-content">
 						  <%= f.label :email, "メールアドレス", class: "form-label"%>
 						  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-input" %>
