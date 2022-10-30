@@ -2,7 +2,7 @@
 	<div class="wrapper-postShow">
 		<div class="postShow-header">
 			<div class="r-btn">
-				<%= link_to root_path do %>
+				<%= link_to root_path, class: "r-btn-link" do %>
 					<i class="fa-solid fa-arrow-left"></i>
 				<% end %>
 			</div>
@@ -10,16 +10,28 @@
 				<span>投稿詳細</span>
 			</div>
 		</div>
-		<div class="content">
+		<div class="show-content">
 			<div class="content-show">
-				<h2 class="username"><%= @post.user.name %></h2>
+				<div class="show-content-title">
+					<h2 class="username"><%= @post.user.name %></h2>
+					<% if user_signed_in? && @post.user_id === current_user.id %>
+						<div class="show-content-action">
+							<%= link_to edit_post_path(@post), class: "show-content-action-btn" do %>
+								<i class="fa-solid fa-pen show-content-action-icon"></i>
+							<% end %>
+							<%= link_to @post, data: { turbo_method: :delete }, class: "show-content-action-btn ml20" do %>
+								<i class="fa-solid fa-trash show-content-action-icon"></i>
+							<% end %>
+						</div>
+					<% end %>
+				</div>
 				<p class="text">
 					<%= @post.text %>
 				</p>
 				<div class="info">
 					<div class="info-right">
 						<i class="fa-solid fa-calendar icon-style mr"></i>
-						<p>2022/10/22</p>
+						<p><%= @post.created_at.strftime("%H:%M  %Y/%m/%d") %></p>
 					</div>
 					<div class="info-left">
 						<div class="info-fav">
