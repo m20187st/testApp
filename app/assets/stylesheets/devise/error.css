@@ -1,0 +1,20 @@
+.devise-error {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 25px 35px;
+	margin: 30px 0;
+	box-sizing: border-box;
+	background-color: #EDE1E2;
+	font-size: 15px;
+	box-shadow: inset 0px 0px 2px 1px rgba(255, 0, 0, 0.8);
+}
+
+.devise-error-content:not(:first-child) {
+	margin-top: 5px;
+}
+
+.devise-error-icon {
+	font-size: 20px;
+	margin-right: 12px;
+}
