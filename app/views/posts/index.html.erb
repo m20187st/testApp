@@ -3,6 +3,29 @@
 		<div class="header-logo">
 			<%= link_to "t-ch", root_path, class: "header-logo-btn" %>
 		</div>
+	<!-- ハンバーガーメニュー部分 -->
+	<div class ="drawer">
+		<!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+		<input type="checkbox" id="ham-toggle" class="ham-checkbox" name="ham-check">
+		<nav class="ham-nav">
+			<ul class=>
+				<% if user_signed_in? %>
+					<li class="ham_menu menu_item-js active-js">最新の投稿</li>
+					<li class="ham_menu menu_item-js">お気に入り</li>
+					<li class="ham_menu menu_item-js">自分の投稿</li>
+					<li class="ham_menu"><%= link_to "投稿する", new_post_path %></li>
+					<li class="ham_menu"><%= button_to "ログアウト", destroy_user_session_path,method: :delete %></li>
+				<% else %>
+					<li class="ham_menu drawer-item"><%= link_to "ログイン", new_user_session_path %></li>
+					<li class="ham_menu drawer-item"><%= link_to "会員登録", new_user_registration_path %></li>
+				<% end %>
+			</ul>
+		</nav>
+				<label for="ham-toggle" class="ham-wrapper">
+			<div class="ham-icon"></div>
+		</label>
+	</div>
+	<!-- ハンバーガーメニュー部分 ここまで -->
 		<div>
 			<% if user_signed_in? %>
 				<ul class="header-lists">

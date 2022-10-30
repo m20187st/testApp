@@ -43,3 +43,24 @@
 .btn-return {
 	margin-top: 30px;
 }
+
+@media screen and (max-width: 550px) {
+	/* ログインと会員登録 */
+	.devise-contents {
+		max-width: 90%;
+		margin: 0 auto;
+	}
+
+	/* 新規投稿と編集 */
+
+	.wrapper {
+		max-width: 100%;
+		margin: 0 auto;
+	}
+
+	.form-textarea {
+		height: 200px;
+		width: 100%;
+		resize: none;
+	}
+}
