@@ -1,0 +1,137 @@
+.postShow {
+	display: flex;
+	justify-content: center;
+}
+
+.wrapper-postShow {
+	width: 700px;
+}
+
+/* postShow header */
+.postShow-header {
+	background-color: aquamarine;
+	height: 50px;
+	height: 80px;
+	display: flex;
+	align-items: center;
+}
+
+.r-btn {
+	width: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 20px;
+	background-color: antiquewhite;
+	border-radius: 25px;
+}
+
+.r-btn:hover {
+	background-color: #c0c0c0;
+	transition: 0.3s;
+}
+
+.postShow-header-title {
+	height: 100%;
+	width: calc(100% - 50px);
+	margin-left: 25px;
+	line-height: 80px;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+/* postShow comments */
+
+.postShow-comments {
+	background-color: cadetblue;
+}
+	/* header */
+.postShow-comments-header {
+	background-color: #c0c0c0;
+	height: 60px;
+	line-height: 60px;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+	/* form */
+.postShow-form {
+}
+
+.comment-form {
+	display: flex;
+	height: 60px;
+	line-height: 60px;
+	/*width: 100%;*/
+}
+
+.comment-form-input {
+	background-color: blueviolet;
+	width: 80%;
+	/*padding: 10px;*/
+	box-sizing: border-box;
+}
+
+.comment-form-input input {
+	background-color: whitesmoke;
+	height: 100%;
+	width: 100%;
+	padding: 15px;
+	box-sizing: border-box;
+	font-size: 15px;
+	box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
+}
+
+.comment-form-submit {
+	background-color: cornflowerblue;
+	width: 20%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.comment-form-submit input {
+	background-color: antiquewhite;
+	height: 80%;
+	width: 80%;
+	line-height: 80%;
+	border-radius: 20px;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+		/* comment list */
+.comment-container {
+	margin-top: 20px;
+	width: 70%;
+	background-color: cornflowerblue;
+}
+
+.comment-username {
+	background-color: orange;
+	height: 30px;
+	line-height: 30px;
+	font-size: 20px;
+}
+
+.comment-content {
+	background-color: #fff;
+	padding: 20px 25px;
+	font-size: 20px;
+	border-radius: 25px;
+}
+
+.comment-info {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 15px;
+	font-size: 13px;
+}
+
+.comment-info-date {
+	color: #c0c0c0;
+}
+
+.comment-info-delete button {
+	color: red;
+}
+
+/* <%= post.created_at.strftime("%Y/%m/%d/%H:%M") %> */
