@@ -31,7 +31,12 @@
 		</div>
 		<div class="contents content-js show-js">
 			<div class="none"></div>
-			<%= render partial: "show", collection: @posts, as: "post", locals: {flag: "post"} %>
+			<div id="posts">
+				<%= render partial: "show", collection: @posts, as: "post", locals: {flag: "post"} %>
+			</div>
+			<div id="next_link">
+				<%= button_to "next", pagy_url_for(@pagy, @pagy.next) %>
+			</div>
 		</div>
 		<div class="contents content-js">
 			<div class="none"></div>
@@ -43,26 +48,3 @@
 		</div>
 	</div>
 </main>
-
-<% if false %>
-	<div class="main">
-		<div>
-			<div class="menu_item-js active-js">posts</div>
-			<div class="menu_item-js">favorites</div>
-		</div>
-		<div class="content-js show-js">
-			<h3 class="section-title">posts</h3>
-			<div class="contents">
-				<div class="contents-item"><%= render partial: "show", collection: @posts, as: "post", locals: {flag: "post"} %></div>
-			</div>
-		</div>
-		<div class="content-js">
-			<% if user_signed_in? %>
-			<h3 class="section-title">favorites</h3>
-			<div class="contents">
-				<div class="contents-item"><%= render partial: "show", collection: @favorite_posts, as: "post", locals: {flag: "fav"} %></div>
-			</div>
-			<% end %>
-		</div>
-	</div>
-<% end %>

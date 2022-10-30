@@ -1,9 +1,14 @@
 class PostsController < ApplicationController
   def index
-	@posts = Post.order(created_at: :desc).limit(10)
+	#@posts = Post.order(created_at: :desc).limit(10)
+	@pagy, @posts = pagy_countless(Post.order(created_at: :desc), items: 2)
 	if user_signed_in?
 		@favorite_posts = Post.includes(:favorites).where(favorites: {user_id: current_user.id}).order('favorites.created_at desc').limit(10)
 		@user_posts = Post.where(user_id: current_user.id).order(created_at: :desc).limit(10)
+	end
+	respond_to do |format|
+		format.html # GET
+		format.turbo_stream # POST
 	end
   end
 
