@@ -19,7 +19,8 @@
 							<%= link_to edit_post_path(@post), class: "show-content-action-btn" do %>
 								<i class="fa-solid fa-pen show-content-action-icon"></i>
 							<% end %>
-							<%= link_to @post, data: { turbo_method: :delete }, class: "show-content-action-btn ml20" do %>
+							<%= button_to post_path(@post), method: :delete, class: "show-content-action-btn ml20", data: { turbo: false} do %>
+								<span class="show-content-action-btn"></span>
 								<i class="fa-solid fa-trash show-content-action-icon"></i>
 							<% end %>
 						</div>
