@@ -5,5 +5,7 @@
       src: pagy_url_for(@pagy, @pagy.next),
       target: "_top"
     ) do %>
-  Loading...
+	<div class="gif-style">
+		<%= image_tag "loading-02.gif" %>
+	</div>
 <% end %>

@@ -130,3 +130,8 @@
 .active {
 	background: rgba(245,245,245,0.5);
 }
+
+.gif-style {
+	width: 100%;
+	text-align: center;
+}

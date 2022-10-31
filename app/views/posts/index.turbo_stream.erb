@@ -4,6 +4,7 @@
 
 <%= turbo_stream.update "next_link" do %>
   <% if @pagy.next.present? %>
-    <%= button_to "next", pagy_url_for(@pagy, @pagy.next) %>
+    <%= button_to pagy_url_for(@pagy, @pagy.next) do %>
+	<% end %>
   <% end %>
 <% end %>
