@@ -3,6 +3,12 @@
 	justify-content: center;
 }
 
+@media screen and (max-width: 550px) {
+	.style {
+		display: block;
+	}
+}
+
 .contents {
 	height: calc(100vh);
 	overflow: scroll;
