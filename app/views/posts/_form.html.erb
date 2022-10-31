@@ -1,21 +1,18 @@
-<div class="wrapper">
+<%#<div class="wrapper">
 	<div class="devise-contents">
-		<h2 class="devise-title">新規登録</h2>
+		<h2 class="devise-title">新規投稿</h2>
 		<%= form_with model: @post do |f| %>
-			<div class="form">
-				<div>
-					<div class="form-content">
-						<div><%= f.label :text, "投稿内容", autofocus: true, class: "form-label" %></div>
-						<div><%= f.text_area :text, maxlength: 256, class: "form-textarea" %></div>
-					</div>
-				</div>
-			</div>
-			<div class="">
-				<%= f.submit "投稿する", class: "btn-submit" %>
-			</div>
-		<% end %>
-		<div class="btn-return">
-			<%= link_to "戻る", root_path %>
+<div class="form">
+	<div>
+		<div class="form-content">
+			<div><%= f.label :text, "投稿内容", autofocus: true, class: "form-label" %></div>
+			<div><%= f.text_area :text, maxlength: 256, class: "form-textarea" %></div>
 		</div>
 	</div>
 </div>
+		<%#<% end %>
+		<%#<div class="btn-return">
+			<%= link_to "戻る", root_path %>
+		<%#</div>
+	</div>
+</div>%>
