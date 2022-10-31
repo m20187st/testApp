@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e" pages="2">
     <diagram id="unzZsLRsWDIqdVNYKFJc" name="画面遷移">
-        <mxGraphModel dx="552" dy="609" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" page="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -61,20 +61,11 @@
                         <mxPoint x="250" y="370" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="fcIu7HUXVSY3Dmv6i7Zv-21" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;プロフィール&lt;br&gt;画面&lt;br&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;fontSize=15;" parent="1" vertex="1">
-                    <mxGeometry x="200" y="360" width="80" height="80" as="geometry"/>
-                </mxCell>
-                <mxCell id="fcIu7HUXVSY3Dmv6i7Zv-22" value="" style="endArrow=classic;startArrow=none;html=1;rounded=0;fontSize=12;startFill=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="fcIu7HUXVSY3Dmv6i7Zv-1" target="fcIu7HUXVSY3Dmv6i7Zv-21" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="270" y="380" as="sourcePoint"/>
-                        <mxPoint x="270" y="300" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
             </root>
         </mxGraphModel>
     </diagram>
     <diagram id="IpjNUoBfomgTbAcuOacs" name="er図">
-        <mxGraphModel dx="552" dy="609" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1083" dy="639" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
