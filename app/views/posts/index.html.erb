@@ -17,13 +17,15 @@
 					<li class="ham_menu"><%= button_to "ログアウト", destroy_user_session_path, method: :delete, data: { turbo: false } %></li>
 				<% else %>
 					<li class="ham_menu drawer-item"><%= link_to "ログイン", new_user_session_path %></li>
-					<li class="ham_menu drawer-item"><%= link_to "会員登録", new_user_registration_path %></li>
+					<li class="ham_menu drawer-item"><%= link_to "新規登録", new_user_registration_path %></li>
 				<% end %>
 			</ul>
 		</nav>
-				<label for="ham-toggle" class="ham-wrapper">
-			<div class="ham-icon"></div>
-		</label>
+		<div class="hamburger">
+			<label for="ham-toggle" class="ham-wrapper">
+				<div class="ham-icon"></div>
+			</label>
+		</div>
 	</div>
 	<!-- ハンバーガーメニュー部分 ここまで -->
 		<div>
@@ -34,7 +36,7 @@
 			<% else %>
 				<ul class="header-lists">
 					<li class=""><%= link_to "ログイン", new_user_session_path, class: "header-list" %></li>
-					<li class=""><%= link_to "会員登録", new_user_registration_path, class: "header-list" %></li>
+					<li class=""><%= link_to "新規登録", new_user_registration_path, class: "header-list" %></li>
 				</ul>
 			<% end %>
 		</div>

@@ -38,12 +38,14 @@
 }
 
 .r-btn:hover {
-	background-color: #d0d0d0;
+	background-color: #d8a373;
+	/*filter: brightness(50%);*/
 	transition: 0.3s;
 }
 
 .r-btn-link {
 	display: block;
+	color: #000;
 }
 
 .postShow-header-title {
@@ -80,17 +82,15 @@
 .show-content-action {
 	display: flex;
 	font-size: 20px;
-	/*background-color: aqua;*/
 }
 
 .show-content-action-icon {
 	color: #dcdcdc;
 }
 
-.show-content-action-btn {
-	/*display: block;*/
-	/*display: table-cell;
-	vertical-align: middle;*/
+.show-content-action-btn:hover svg {
+	color: #F4B183;
+	transition: 0.1s;
 }
 
 .ml20 {
@@ -199,6 +199,7 @@
 	border-radius: 20px;
 	box-sizing: border-box;
 	cursor: pointer;
+	border: 6px ridge antiquewhite;
 }
 		/* comment list */
 .comment-container {

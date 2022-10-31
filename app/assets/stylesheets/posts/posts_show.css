@@ -12,8 +12,6 @@ body {
     min-height: 100%;
     margin-left: auto;
     margin-right: auto;
-
-    /* background-color: rgb(255, 225, 225); */
 }
 
 
@@ -114,8 +112,3 @@ body {
     display: flex;
     justify-content:space-between;
 }
-
-
-
-
-

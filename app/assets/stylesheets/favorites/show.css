@@ -1,0 +1,14 @@
+.fav-icon-true, .fav-count-true {
+	color: #ff6347;
+}
+/*
+.fav-count-false, .fav-icon-false {
+	color: #a9a9a9;
+}*/
+
+.fav-link {
+	color: #a9a9a9;
+}
+.fav-link:hover {
+	color: #ff6347;
+}

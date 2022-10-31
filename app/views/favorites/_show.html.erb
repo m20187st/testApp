@@ -1,36 +1,16 @@
-<% if false %>
-<% if user_signed_in? %>
-	<turbo-frame id="favorite-btn<%= post.id %><%= local_assigns[:flag] %>">
-		<% if post.favorited_by?(current_user)%>
-			<%= button_to post_favorite_path(post, id: post.favorites, flag: local_assigns[:flag]), method: :delete do %>
-				<i class="fa-solid fa-heart"></i>
-			<% end %>
-			<%= link_to post_favorite_path(post, id: post.favorites, flag: local_assigns[:flag]), method: :delete do %>
-			<% end %>
-			<%= post.favorites.count %>
-		<% else %>
-			<%= button_to post_favorites_path(post, flag: local_assigns[:flag]), method: :post  do %>
-				<i class="fa-regular fa-heart"></i>
-			<% end %>
-			<%= post.favorites.count %>
-		<% end %>
-	</turbo-frame>
-<% end %>
-<% end %>
-
 <% if user_signed_in? %>
 	<% if post.favorited_by?(current_user)%>
 		<%= link_to post_favorite_path(post, id: post.favorites, flag: local_assigns[:flag]), data: { turbo_method: :delete } do %>
 			<turbo-frame id="favorite-btn<%= post.id %><%= local_assigns[:flag] %>">
-				<i class="fa-solid fa-heart"></i>
-				<%= post.favorites.count %>
+				<i class="fa-solid fa-heart fav-icon-true"></i>
+				<span class="fav-count-true"><%= post.favorites.count %></span>
 			</turbo-frame>
 		<% end %>
 	<% else %>
-		<%= link_to post_favorites_path(post, flag: local_assigns[:flag]), data: { turbo_method: :post } do %>
+		<%= link_to post_favorites_path(post, flag: local_assigns[:flag]), class: "fav-link", data: { turbo_method: :post } do %>
 			<turbo-frame id="favorite-btn<%= post.id %><%= local_assigns[:flag] %>">
-				<i class="fa-regular fa-heart"></i>
-				<%= post.favorites.count %>
+				<i class="fa-regular fa-heart fav-icon-false"></i>
+				<span class="fav-count-false"><%= post.favorites.count %></span>
 			</turbo-frame>
 		<% end %>
 	<% end %>
