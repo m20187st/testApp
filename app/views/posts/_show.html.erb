@@ -1,14 +1,3 @@
-<% if false %>
-<%# seko %>
-<li class="wrap">
-	<div class="wrap-item">
-		<%= link_to post_path(post) do %>
-		<div class="wrap-item-name"><span class="item-name-color">[<%= post.user.id %>]<%= post.user.name %></span><span class="item-color-created-at"><%= post.created_at.strftime("%m/%d/%H:%M") %></span></div>
-		<div class="wrap-item-text">"<%= post.text %>"</div>
-		<div class="wrap-item-counts"><span class="favorite-button"><%= render "favorites/show", {post: post} %></span><%= post.favorites.count %> ※<%= post.comments.count%></span></div><% end %>
-	</div>
-</li>
-<% end %>
 <div class="content">
 <%= link_to post_path(post), class: "content-show" do %>
 	<h2 class="username"><%= post.user.name %></h2>
@@ -17,8 +6,8 @@
 	</p>
 	<div class="info">
 		<div class="info-right">
-			<i class="fa-solid fa-calendar icon-style mr"></i>
-			<p><%= post.created_at.strftime("%Y/%m/%d") %></p>
+			<i class="fa-solid fa-clock icon-style mr"></i>
+			<p><%= ft_time_ago_in_words(post.created_at) %></p>
 		</div>
 		<div class="info-left">
 			<div class="info-fav">
