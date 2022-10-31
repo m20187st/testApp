@@ -1,14 +1,11 @@
 .style {
-	/*margin-top: 30px;*/
 	display: flex;
 	justify-content: center;
-	/*align-items: center;*/
 }
 
 .contents {
 	height: calc(100vh);
 	overflow: scroll;
-
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 }

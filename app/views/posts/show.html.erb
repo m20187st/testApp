@@ -1,3 +1,63 @@
+<div class="postShow">
+	<div class="wrapper-postShow">
+		<div class="postShow-header">
+			<div class="r-btn">
+				<%= link_to root_path, class: "r-btn-link" do %>
+					<i class="fa-solid fa-arrow-left"></i>
+				<% end %>
+			</div>
+			<div class="postShow-header-title">
+				<span>投稿詳細</span>
+			</div>
+		</div>
+		<div class="show-content">
+			<div class="content-show">
+				<div class="show-content-title">
+					<h2 class="username"><%= @post.user.name %></h2>
+					<% if user_signed_in? && @post.user_id === current_user.id %>
+						<div class="show-content-action">
+							<%= link_to edit_post_path(@post), class: "show-content-action-btn" do %>
+								<i class="fa-solid fa-pen show-content-action-icon"></i>
+							<% end %>
+							<%= link_to @post, data: { turbo_method: :delete }, class: "show-content-action-btn ml20" do %>
+								<i class="fa-solid fa-trash show-content-action-icon"></i>
+							<% end %>
+						</div>
+					<% end %>
+				</div>
+				<p class="text">
+					<%= @post.text %>
+				</p>
+				<div class="info">
+					<div class="info-right">
+						<i class="fa-solid fa-calendar icon-style mr"></i>
+						<p><%= @post.created_at.strftime("%H:%M  %Y/%m/%d") %></p>
+					</div>
+					<div class="info-left">
+						<div class="info-fav">
+							<object data="" type="">
+								<%= render "favorites/show", {post: @post, flag: "post"} %>
+							</object>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="postShow-comments">
+			<div class="postShow-comments-header">
+				<span>コメント（<%= @post.comments.count%>）</span>
+			</div>
+			<div class="postShow-form">
+				<%= render "comments/form", {post: @post, comment: @comment} %>
+			</div>
+			<div class="postShow-comment-lists">
+				<%= render partial: "comments/show", collection: @comments, as: "comment" %>
+			</div>
+		</div>
+	</div>
+</div>
+
+<% if false %>
 <div class="detail-width">
 	<div class="detail-header">
 		<div class="detail-header-back">
@@ -44,14 +104,4 @@
 		</div>
 	</div>
 </div>
-
-
-
-
-
-<%#//////////////////////////////////////使ってない//////////////////////////////////////////%>
-<%#	
-投稿者email：	%= @post.user.email%
-投稿ID：		%= @post.id%
-updated_at : 	%= @post.updated_at.strftime('%m/%d %H:%M')%
-%>
+<% end %>
