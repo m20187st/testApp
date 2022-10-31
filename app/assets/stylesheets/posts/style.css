@@ -11,7 +11,7 @@
 }
 
 .contents::-webkit-scrollbar {
-	display:none;
+	display: none;
 }
 
 .none {
@@ -125,6 +125,10 @@
 	background: rgba(245,245,245,0.5);
 }
 
+.gif-style {
+	width: 100%;
+	text-align: center;
+}
 
 @media screen and (max-width: 550px) {
 	.side-bar{

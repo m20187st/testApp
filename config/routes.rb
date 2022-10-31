@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'users/sessions' }
 
   resources :posts do
+	collection do
+		post :index
+	end
 	resources :favorites, only: [:create, :destroy]
 	resources :comments, only: [:create, :destroy]
   end

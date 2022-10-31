@@ -1,0 +1,11 @@
+<%= turbo_frame_tag(
+      "posts-page-#{@pagy.next}",
+      # autoscroll: true,
+      loading: :lazy,
+      src: pagy_url_for(@pagy, @pagy.next),
+      target: "_top"
+    ) do %>
+	<div class="gif-style">
+		<%= image_tag "loading-02.gif" %>
+	</div>
+<% end %>
