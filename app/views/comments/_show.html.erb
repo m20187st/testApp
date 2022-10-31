@@ -1,7 +1,28 @@
 <div class="comment-container">
+	<div class="comment-username">
+		<span><%= comment.user.name %></span>
+	</div>
+	<div class="comment-content">
+		<div class="commment-text">
+			<%= comment.comment%>
+		</div>
+		<div class="comment-info">
+			<div class="comment-info-date">
+				<%= comment.created_at.strftime("%Y/%m/%d") %>
+			</div>
+			<div class="comment-info-delete">
+				<% if user_signed_in? && comment.user_id === current_user.id %>
+					<%= button_to "削除", post_comment_path(comment.id), method: :delete %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+
+<% if false %>
+<div class="comment-container">
 	<div class="comment-name">
 		<span class="comment-user-name"><%= comment.user.name %></span>
-		<span class="comment-user-id">.<%= comment.user_id%></span>
 	</div>
 	<div class="comment-comment">
 		<%= comment.comment %>
@@ -9,19 +30,8 @@
 	<% if user_signed_in? && comment.user_id === current_user.id %>
 	<%= button_to "delete", post_comment_path(comment.id), method: :delete %>
 	<% end %>
-	
+
 	</div>
 	</div>
-	
 </div>
-	
-	
-
-
-<%# 使わない %>
-<%# 
-%= comment.post_id %
-%= comment.user_id %
-%= comment.id %
-
- %>
+<% end %>
