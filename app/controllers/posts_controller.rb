@@ -22,7 +22,7 @@ class PostsController < ApplicationController
 	@post = Post.new
   end
 
-  def create
+  def create_post
 	@post = Post.new(post_params)
 	if @post.save
 		redirect_to @post

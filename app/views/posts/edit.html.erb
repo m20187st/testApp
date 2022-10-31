@@ -1,1 +1,14 @@
-<%= render "form", post: @post %>
+<div class="wrapper">
+	<div class="devise-contents">
+		<h2 class="devise-title">投稿編集</h2>
+		<%= form_with model: @post do |f| %>
+			<%= render "form", post: @post, f: f %>
+			<div class="">
+				<%= f.submit "編集する", class: "btn-submit" %>
+			</div>
+		<% end %>
+		<div class="btn-return">
+			<%= link_to "戻る", root_path %>
+		</div>
+	</div>
+</div>
